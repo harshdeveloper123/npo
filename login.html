@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - LivesCare</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"/>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .login-container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login to LivesCare</h2>
+    <form id="loginForm">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" required />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" required />
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+    <div class="text-center mt-3">
+      Don't have an account? <a href="signup.html">Sign Up</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Simple placeholder logic (replace with real validation)
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Example: very basic dummy validation
+      if (email && password) {
+        localStorage.setItem("isLoggedIn", "true");
+        alert("Login successful!");
+        window.location.href = "index.html";
+      } else {
+        alert("Invalid credentials. Please try again.");
+      }
+    });
+  </script>
+
+</body>
+</html>
